@@ -38,7 +38,8 @@ class UsersController {
       if (user) {
         const token = generateToken(user);
         res.cookie("cookieLogin", token);
-        res.status(200).json(user);
+        res.redirect('https://expense-tracker-front-kappa.vercel.app/users/dashboard')
+        /* res.status(200).json(user); */
       } else {
         res
           .status(400)
